@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println("1 - Somar");
+        System.out.println("2 - Subtrair");
+        System.out.println("3 - Multiplicar");
+        System.out.println("4 - Dividir");
+
+        System.out.print("Digite a opção: ");
+        int opcao = entrada.nextInt();
+
+        System.out.print("Digite o primeiro número: ");
+        double numero1 = entrada.nextDouble();
+
+        System.out.print("Digite o segundo número: ");
+        double numero2 = entrada.nextDouble();
+
+        if (opcao == 1) {
+            System.out.println("Resultado: " + (numero1 + numero2));
+
+        } else if (opcao == 2) {
+            System.out.println("Resultado: " + (numero1 - numero2));
+
+        } else if (opcao == 3) {
+            System.out.println("Resultado: " + (numero1 * numero2));
+
+        } else if (opcao == 4) {
+
+            if (numero2 == 0) {
+                System.out.println("Não é possível dividir por zero.");
+            } else {
+                System.out.println("Resultado: " + (numero1 / numero2));
+            }
+
+        } else {
+            System.out.println("Opção inválida.");
+        }
+
+        entrada.close();
+    }
+}

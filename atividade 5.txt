@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        double saldo = 1000.00;
+        int opcao = 0;
+
+        while (opcao != 4) {
+
+            System.out.println("\n1 - Depositar");
+            System.out.println("2 - Sacar");
+            System.out.println("3 - Ver saldo");
+            System.out.println("4 - Sair");
+
+            System.out.print("Digite a opção: ");
+            opcao = entrada.nextInt();
+
+            if (opcao == 1) {
+
+                System.out.print("Digite o valor do depósito: ");
+                double deposito = entrada.nextDouble();
+
+                if (deposito > 0) {
+                    saldo = saldo + deposito;
+                    System.out.println("Depósito realizado!");
+                } else {
+                    System.out.println("Valor inválido.");
+                }
+
+            } else if (opcao == 2) {
+
+                System.out.print("Digite o valor do saque: ");
+                double saque = entrada.nextDouble();
+
+                if (saque > 0 && saque <= saldo) {
+                    saldo = saldo - saque;
+                    System.out.println("Saque realizado!");
+                } else {
+                    System.out.println("Saque inválido.");
+                }
+
+            } else if (opcao == 3) {
+
+                System.out.printf("Saldo: R$ %.2f%n", saldo);
+
+            } else if (opcao == 4) {
+
+                System.out.printf("Saldo final: R$ %.2f%n", saldo);
+
+            } else {
+
+                System.out.println("Opção inválida.");
+            }
+        }
+
+        entrada.close();
+    }
+}

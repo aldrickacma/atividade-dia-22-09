@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.print("Digite o valor da compra: R$ ");
+        double valor = entrada.nextDouble();
+
+        System.out.print("Digite a categoria (1, 2 ou 3): ");
+        int categoria = entrada.nextInt();
+
+        double desconto = 0;
+
+        if (categoria == 1) {
+            desconto = valor * 0.05;
+
+        } else if (categoria == 2) {
+            desconto = valor * 0.10;
+
+        } else if (categoria == 3) {
+            desconto = valor * 0.15;
+
+        } else {
+            System.out.println("Categoria inválida.");
+            entrada.close();
+            return;
+        }
+
+        double valorFinal = valor - desconto;
+
+        System.out.printf("Valor do desconto: R$ %.2f%n", desconto);
+        System.out.printf("Valor final a pagar: R$ %.2f%n", valorFinal);
+
+        entrada.close();
+    }
+}
